@@ -1,10 +1,8 @@
 /*
 Author: coderqiuan@163.com
 Created on: 2016-11-09 15:11
-*/
+ */
 
-#include <stdio.h>
-#include <stdlib.h>
 #include <errno.h>
 #include <fcntl.h>
 #include <unistd.h>
@@ -24,11 +22,11 @@ Created on: 2016-11-09 15:11
 using namespace qiuan::base;
 
 CReadFile::CReadFile(std::string file_name)
-    : m_file(::open(file_name.c_str(), O_RDONLY | O_CLOEXEC))
-    , m_filesize(0)
-    , m_readsize(0)
-    , m_createtime(0)
-    , m_modifytime(0)
+    : m_file(::open(file_name.c_str(), O_RDONLY | O_CLOEXEC)),
+    m_filesize(0),
+    m_readsize(0),
+    m_createtime(0),
+    m_modifytime(0)
 {
     if(m_file < 0)
     {
@@ -130,7 +128,7 @@ CReadFile::ReadType CReadFile::read(std::string& out_buf, size_t max_file_size)
 //////////////////////////////////////////////////////////////////////
 
 CWriteFile::CWriteFile(std::string file_name)
-: m_file(::fopen(file_name.c_str(), "abe")) //'e' for O_CLOEXEC
+    : m_file(::fopen(file_name.c_str(), "abe")) //'e' for O_CLOEXEC
 {
     if(NULL == m_file)
     {

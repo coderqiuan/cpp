@@ -3,12 +3,12 @@ Author: coderqiuan@163.com
 Created on: 2016-11-09 11:51
 */
 
-#include "../base/timestamp.h"
-#include "../base/baseheader.h"
+#include "base/baseutil.h"
+#include "base/timestamp.h"
 
 using namespace qiuan::base;
 
-int main(int argc, char* argv[])
+int test_time(int argc, char* argv[])
 {
     CTimeStamp timestamp;
     

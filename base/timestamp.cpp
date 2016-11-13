@@ -3,8 +3,6 @@ Author: coderqiuan@163.com
 Created on: 2016-11-09 11:09
 */
 
-#include <stdio.h>
-#include <stdlib.h>
 #include "timestamp.h"
 
 using namespace qiuan::base;

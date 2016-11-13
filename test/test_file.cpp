@@ -3,13 +3,18 @@ Author: coderqiuan@163.com
 Created on: 2016-11-09 17:02
  */
 
-#include "../base/fileutil.h"
-#include "../base/baseheader.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+#include "base/fileutil.h"
 
 using namespace qiuan::base;
 
-int main(int argc, char* argv[])
+int test_file(int argc, char* argv[])
 {
+    system("rm -f file.log");
+
     std::string write_buffer = "1234567890";
     CWriteFile writefile("file.log");
     writefile.write(write_buffer);
