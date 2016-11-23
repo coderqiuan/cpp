@@ -45,7 +45,7 @@ namespace qiuan
                     }
                 }
 
-                void Lock()
+                void lock()
                 {
                     if(0 != pthread_mutex_lock(&m_mutex))
                     {
@@ -54,7 +54,7 @@ namespace qiuan
                     }
                 }
 
-                void Unlock()
+                void unlock()
                 {
                     if(0 != pthread_mutex_unlock(&m_mutex))
                     {
@@ -84,12 +84,12 @@ namespace qiuan
                 explicit CMutexGuard(CMutex& mutex)
                     : m_mutex(mutex)
                 {
-                    m_mutex.Lock();   
+                    m_mutex.lock();   
                 }
 
                 ~CMutexGuard()
                 {
-                    m_mutex.Unlock();    
+                    m_mutex.unlock();    
                 }
 
             private:

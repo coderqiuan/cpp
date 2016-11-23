@@ -16,8 +16,8 @@ namespace qiuan
     {
         pid_t pid() { return ::getpid(); }
 
-        void sleep_s(uint32_t sec) { sleep(sec); }
-        void sleep_ms(uint32_t msec) { usleep(msec * 1000); }
+        inline void sleep_s(uint32_t sec) { sleep(sec); }
+        inline void sleep_ms(uint32_t msec) { usleep(msec * 1000); }
 
         template<typename Type> Type to_number(std::string in_str)
         {
@@ -39,7 +39,7 @@ namespace qiuan
             return ss.str();
         }
 
-        int to_string(char* in_buf, int in_len, const char* fmt, ...)
+        inline int to_string(char* in_buf, int in_len, const char* fmt, ...)
         {
             va_list args;
 
@@ -52,12 +52,12 @@ namespace qiuan
             return v;
         }
 
-        int to_string(char* in_buf, int in_len, const char* fmt, va_list& args)
+        inline int to_string(char* in_buf, int in_len, const char* fmt, va_list& args)
         {
             return vsnprintf(in_buf, in_len, fmt, args);
         }
 
-        int sys_trim(const char* &start, const char* in_buf, int in_len)
+        inline int sys_trim(const char* &start, const char* in_buf, int in_len)
         {
             if(NULL == in_buf || in_len <= 0)
             {

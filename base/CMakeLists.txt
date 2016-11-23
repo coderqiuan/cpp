@@ -10,6 +10,9 @@ set(SRC_LIST
 ./baseutil.h
 ./singleton.h
 
+./baseuid.h
+./baseuid.cpp
+
 ./fileutil.h
 ./fileutil.cpp
 
@@ -19,5 +22,5 @@ set(SRC_LIST
 
 add_library(qiuan_base ${SRC_LIST})
 
-target_link_libraries (qiuan_base)
+target_link_libraries(qiuan_base)
 
